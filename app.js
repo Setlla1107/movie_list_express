@@ -39,10 +39,15 @@ app.get('/search', (req, res) => {
     return movie.title.toLowerCase().includes(keywords)
     
   })
+  if (movies.length === 0 && keyword.length !== 0) {
+    res.render('error', { keyword })
+    return
+  } else {
       // restaurantList裡的名稱也都改小寫，有包含使用者輸入的內容keyword時就回傳該餐廳
   // console.log('req.query', req.query)
   res.render('index', { movies: movies, keyword: keyword })
                                       // 保留使用者搜尋字串
+  }                                    
 })
 
 // 啟動伺服器去監聽

@@ -1,0 +1,24 @@
+<div class="container mt-5">
+<!-- search bar -->
+<div class="row" id="search-bar">
+  <div class="col-12">
+    <form action="/search">
+      <div class="input-group mb-3">
+        <input type="text" name="keyword" value="{{keyword}}" class="form-control"
+          placeholder="Enter movie name to search..." aria-label="Movie Name..." aria-describedby="search-button">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="submit" id="search-button">Search</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<h3>
+  <small class="text-muted">沒有 "{{keyword}}" 的電影，請用其他關鍵字搜尋</small></h3>
+<img class="rounded mx-auto d-block"
+  src="https://img.freepik.com/premium-vector/error-404-found-glitch-effect_8024-4.jpg?w=360"
+  alt="error">
+
+
+</div>
