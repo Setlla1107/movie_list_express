@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+
 // 將JSON檔載入express中
 const movieList = require('./movies.json').results
 
@@ -25,7 +26,7 @@ app.get('/movies/:movie_id', (req, res) => {
   const movie = movieList.find(
     movie => movie.id.toString() === req.params.movie_id
     )  
-    res.render('show', { movie: movie })
+    res.render('show', { movie })
 //{ 物件屬性名稱，會被show文件使用: 值是自建的const常數 }
 // 如此，就可以把 movie 的資料送到 show.handlebars 中使用
 }) 
@@ -45,8 +46,8 @@ app.get('/search', (req, res) => {
   } else {
       // restaurantList裡的名稱也都改小寫，有包含使用者輸入的內容keyword時就回傳該餐廳
   // console.log('req.query', req.query)
-  res.render('index', { movies: movies, keyword: keyword })
-                                      // 保留使用者搜尋字串
+  res.render('index', { movies, keyword })
+                            // 保留使用者搜尋字串
   }                                    
 })
 
