@@ -6,6 +6,7 @@ const port = 3000
 // 將JSON檔載入express中
 const movieList = require('./movies.json').results
 
+
 // 用require載入express-handlebars，定義樣板引擎
 const exphbs = require('express-handlebars')
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }))
