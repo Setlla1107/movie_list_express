@@ -44,7 +44,7 @@ app.get('/search', (req, res) => {
     res.render('error', { keyword })
     return
   } else {
-      // restaurantList裡的名稱也都改小寫，有包含使用者輸入的內容keyword時就回傳該餐廳
+      //movieList裡的名稱也都改小寫，有包含使用者輸入的內容keyword時就回傳該電影
   // console.log('req.query', req.query)
   res.render('index', { movies, keyword })
                             // 保留使用者搜尋字串
